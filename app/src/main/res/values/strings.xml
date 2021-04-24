@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">My Cab</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="name_exaple_com">name@exaple.com</string>
+    <string name="connect_with_facebook">Connect With Facebook</string>
+    <string name="connect_with_google">Connect With Google</string>
+    <string name="by_click_start_you_agree_to_our_terms_and_conditions">By click start, you agree to our Terms and conditions</string>
+    <string name="phone_verification">Phone Verification</string>
+    <string name="enter_yout_otp_here">Enter your  OTP code here</string>
+    <string name="next">Next</string>
+    <string name="user">User</string>
+    <string name="driver">Driver</string>
+    <string name="please_upload_your_personal_documents">Please Upload your personal Documents.</string>
+    <string name="upload">Upload</string>
+    <string name="driving_license">Driving License</string>
+    <string name="government_id">Government ID</string>
+    <string name="commercial_insurance">Commercial Insurance</string>
+    <string name="tax_number">Tax Number</string>
+    <string name="rc">RC</string>
+    <string name="request_ride">Request Ride</string>
+    <string name="track_your_ride">Track your ride</string>
+    <string name="request_a_ride_get_picked_up_by_a_nnearby_community_driver">Request a ride get picked up by a\nnearby community driver</string>
+    <string name="confirm_your_driver">Confirm your driver</string>
+    <string name="know_your_driver_in_advance_and_be_nable_to_view_current_location_in_real_time_non_the_map">Know your driver in advance and be\nable to view current location in real time\non the map</string>
+    <string name="enter_your_bank_details">Enter your Bank Details</string>
+    <string name="account_no">Account No.</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="trip_history">Trip History</string>
+    <string name="earnings">Earnings</string>
+    <string name="notification">Notification</string>
+    <string name="setting">Setting</string>
+    <string name="about_us">About Us</string>
+    <string name="share_app">Share app</string>
+    <string name="avg_rating">Avg Rating</string>
+    <string name="reviews">Reviews</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

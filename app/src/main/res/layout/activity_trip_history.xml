@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.TripHistoryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/purple_200"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ivBack"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/back"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/trip_history"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/txGovtId"
+                    android:fontFamily="@font/robotoslabextrabold"
+                    android:layout_toRightOf="@+id/ivBack"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"/>
+
+
+            </RelativeLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                app:cardMaxElevation="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="12sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="210dp">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rl"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/ivStart"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/download"
+                        />
+
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/view"
+                        android:layout_marginLeft="35dp"
+                        android:layout_below="@+id/ivStart"
+                        android:background="@color/light_grey"/>
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/ivEnd"
+                        android:layout_below="@+id/view"
+                        android:layout_marginLeft="25dp"
+                        android:src="@drawable/location"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7958 sweet Village"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/txStartAdress"
+                        android:fontFamily="@font/robotoslabbold"
+                        android:layout_toRightOf="@+id/ivEnd"
+                        android:layout_marginRight="5dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="105 William St,Chicago,Us"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/view"
+                        android:id="@+id/txEndAdress"
+                        android:fontFamily="@font/robotoslabbold"
+                        android:layout_toRightOf="@+id/ivEnd"
+                        android:layout_marginRight="5dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:id="@+id/v1"
+                        android:layout_marginTop="35dp"
+                        android:layout_below="@+id/txEndAdress"
+                        android:background="@color/greyNew"/>
+
+               <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                   android:layout_below="@+id/v1"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ivGovtId"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/download"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 50 "
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:id="@+id/txPrice"
+                    android:fontFamily="@font/robotoslabbold"
+                    android:layout_toRightOf="@+id/ivGovtId"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"/>
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Confirm"
+                       android:layout_centerVertical="true"
+                       android:layout_marginLeft="10dp"
+                       android:gravity="center"
+                       android:layout_toLeftOf="@+id/ivArrow"
+                       android:id="@+id/txStatus"
+                       android:fontFamily="@font/robotoslabbold"
+                       android:layout_marginRight="2dp"
+                       android:textSize="14sp"
+                       android:textColor="@color/blue"/>
+                   <ImageView
+                       android:layout_width="15dp"
+                       android:layout_height="15dp"
+                       android:id="@+id/ivArrow"
+                       android:layout_centerVertical="true"
+                       android:layout_alignParentRight="true"
+                       android:layout_marginLeft="2dp"
+                       android:src="@drawable/arrow"
+                       />
+               </RelativeLayout>
+                </RelativeLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

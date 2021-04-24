@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.OTPVerifyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/ll_main"
+        android:background="@color/purple_200">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:id="@+id/rl_main"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/back"
+                android:padding="10dp"
+                android:id="@+id/ivBack"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/phone_verification"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:id="@+id/tx"
+                android:layout_toRightOf="@+id/ivBack"
+                android:layout_marginRight="10dp"
+                android:textSize="18dp"
+                android:layout_below="@+id/ivBack"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ivBack"
+                android:text="@string/enter_yout_otp_here"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="14sp"
+                android:layout_below="@+id/tx"
+                android:id="@+id/txt_number1"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+
+            android:layout_below="@+id/ll_main"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:id="@+id/rel"
+                android:layout_height="wrap_content">
+
+                <com.chaos.view.PinView
+                    android:id="@+id/pin_view"
+                    style="@style/PinWidget.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:cursorVisible="true"
+                    android:inputType="number"
+                    app:itemCount="4"
+                    android:textColor="@color/black"
+                    app:hideLineWhenFilled="false"
+                    app:itemRadius="5dp"
+                    app:itemSpacing="25dp"
+                    app:lineColor="@color/blue" />
+
+
+
+            </RelativeLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/rel"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/btnSignIn"
+                android:backgroundTint="@color/purple_200"
+                android:text="@string/sign_in"
+                app:cornerRadius="8dp">
+
+
+            </com.google.android.material.button.MaterialButton>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

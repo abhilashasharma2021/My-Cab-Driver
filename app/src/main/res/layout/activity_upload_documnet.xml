@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.UploadDocumnetActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/purple_200"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ivBack"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/back"
+                    app:tint="@color/white" />
+
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relFirst"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="-60dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_Img"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/img">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edt_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_below="@+id/relFirst"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:text="Name"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:fontFamily="@font/robotoslabregular"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/please_upload_your_personal_documents"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:id="@+id/tx"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ivGovtId"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/download"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/government_id"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:id="@+id/txGovtId"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:layout_toRightOf="@+id/ivGovtId"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="120dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    android:fontFamily="@font/robotoslabbold"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="@color/blue"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_200"
+                    android:textStyle="bold"
+                  />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ivDrivingId"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/download"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/driving_license"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:id="@+id/txDrivingId"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:layout_toRightOf="@+id/ivDrivingId"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDriving"
+                    android:layout_width="120dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    android:fontFamily="@font/robotoslabbold"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="@color/blue"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_200"
+                    android:textStyle="bold"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:background="#dbdbdb"
+                android:layout_marginTop="15dp"
+                android:layout_height="1dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Please upload your vehicle Documents."
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabregular"
+                android:id="@+id/tx1"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ivCommercialId"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/download"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/commercial_insurance"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:id="@+id/txCommercial"
+                    android:layout_toRightOf="@+id/ivCommercialId"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:textColor="@color/black"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCommercial"
+                    android:layout_width="120dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    android:fontFamily="@font/robotoslabbold"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="@color/blue"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_200"
+                    android:textStyle="bold"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ivTax"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/download"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/tax_number"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:id="@+id/txtTax"
+                    android:layout_toRightOf="@+id/ivTax"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:textColor="@color/black"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTax"
+                    android:layout_width="120dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    android:fontFamily="@font/robotoslabbold"
+                    app:strokeWidth="0.5dp"
+                    app:strokeColor="@color/blue"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_200"
+                    android:textStyle="bold"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ivRc"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/download"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/rc"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:id="@+id/txtRc"
+                    android:layout_toRightOf="@+id/ivRc"
+                    android:layout_marginRight="10dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:textColor="@color/black"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRc"
+                    android:layout_width="120dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upload"
+                    app:strokeWidth="0.5dp"
+                    android:fontFamily="@font/robotoslabbold"
+                    app:strokeColor="@color/blue"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_200"
+                    android:textStyle="bold"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/btNext"
+            android:fontFamily="@font/robotoslabbold"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/purple_200"
+            android:text="@string/next">
+
+
+        </com.google.android.material.button.MaterialButton>
+</RelativeLayout>
+</RelativeLayout>

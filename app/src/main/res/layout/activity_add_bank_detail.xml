@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AddBankDetailActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="60dp"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/purple_200"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/ivBack"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back"
+            app:tint="@color/white" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/enter_your_bank_details"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/ivBack"
+            android:layout_marginTop="15dp"
+            android:id="@+id/tx"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:layout_marginRight="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/img"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bank"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/account_no"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/ivBack"
+            android:layout_marginTop="15dp"
+            android:id="@+id/txAcc"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="45dp">
+
+
+            <EditText
+                android:id="@+id/etAccount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_toRightOf="@+id/countryCodePicker"
+                android:background="@null"
+                android:hint="@string/account_no"
+                android:inputType="number"
+                android:maxLength="16"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp"
+                android:textSize="14sp" />
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/ifsc_code"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/ivBack"
+            android:layout_marginTop="15dp"
+            android:id="@+id/txIfsc"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:layout_marginRight="10dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="45dp">
+
+
+            <EditText
+                android:id="@+id/etIfsc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toRightOf="@+id/countryCodePicker"
+                android:background="@null"
+                android:fontFamily="@font/robotoslabregular"
+                android:hint="@string/ifsc_code"
+                android:maxLength="16"
+                android:textColor="@color/black"
+                android:paddingLeft="10dp"
+                android:textSize="14sp" />
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rl"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/btnNext"
+            android:fontFamily="@font/robotoslabbold"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/purple_200"
+            android:text="@string/next">
+
+
+        </com.google.android.material.button.MaterialButton>
+    </RelativeLayout>
+</RelativeLayout>

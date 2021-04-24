@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PaymentMethodActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/purple_200">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment Method"
+            android:layout_below="@+id/ivBack"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_marginLeft="15dp"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ivBack"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentRight="true"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_marginLeft="15dp"
+            />
+    </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            android:layout_height="100dp">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/price"
+                    android:elevation="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/iv"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cash "
+                    android:layout_toRightOf="@+id/iv"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/txTitle1"
+                    android:fontFamily="@font/robotoslabbold"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Default Payment Method "
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/iv"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:textSize="14sp"
+                    android:id="@+id/txDescription1"
+                    android:layout_below="@+id/txTitle1"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/grey"
+                    android:layout_marginLeft="15dp"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            android:layout_height="100dp">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/price"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:elevation="5dp"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/iv1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Card "
+                    android:layout_toRightOf="@+id/iv1"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/txTitle2"
+                    android:fontFamily="@font/robotoslabbold"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="15dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Default Payment Method "
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/iv1"
+                    android:fontFamily="@font/robotoslabregular"
+                    android:textSize="14sp"
+                    android:id="@+id/txDescription2"
+                    android:layout_below="@+id/txTitle2"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/grey"
+                    android:layout_marginLeft="15dp"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_Update"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/purple_200"
+            android:text="Add Method"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

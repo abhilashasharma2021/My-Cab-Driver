@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.NotificationActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/purple_200">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notification "
+            android:layout_below="@+id/ivBack"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_marginLeft="15dp"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ivBack"/>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/rightgreen"
+                android:padding="5dp"
+                android:elevation="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/ivright"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System "
+                android:layout_toRightOf="@+id/ivright"
+                android:layout_marginTop="5dp"
+                android:id="@+id/txTitle"
+                android:fontFamily="@font/robotoslabbold"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your booking #123 has been \nsuccess "
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/ivright"
+                android:fontFamily="@font/robotoslabregular"
+                android:textSize="14sp"
+                android:id="@+id/txDescription"
+                android:layout_below="@+id/txTitle"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginLeft="15dp"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/txDescription"
+                android:layout_toRightOf="@+id/ivright"
+                android:background="@color/view_Grey"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/price"
+                android:padding="5dp"
+                android:elevation="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/iv"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promotion "
+                android:layout_toRightOf="@+id/iv"
+                android:layout_marginTop="5dp"
+                android:id="@+id/txTitle1"
+                android:fontFamily="@font/robotoslabbold"
+                android:textSize="14sp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invited friend - Get 3 Coupons each "
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/iv"
+                android:fontFamily="@font/robotoslabregular"
+                android:textSize="14sp"
+                android:id="@+id/txDescription1"
+                android:layout_below="@+id/txTitle1"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:layout_marginLeft="15dp"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/txDescription1"
+                android:layout_toRightOf="@+id/iv"
+                android:background="@color/view_Grey"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

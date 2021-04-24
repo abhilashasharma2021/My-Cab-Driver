@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.EarningActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_200">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Earnings "
+            android:layout_toRightOf="@+id/ivBack"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_marginLeft="15dp"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/ivBack"/>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:background="@drawable/newbackgrnd"
+            android:layout_height="150dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/robotoslabextrabold"
+                android:textSize="16sp"
+                android:id="@+id/tx"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginLeft="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 1500"
+                 android:layout_marginBottom="15dp"
+                android:layout_alignParentBottom="true"
+                android:fontFamily="@font/robotoslabextrabold"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/tx"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:layout_marginLeft="50dp"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

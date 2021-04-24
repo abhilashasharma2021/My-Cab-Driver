@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SignUpActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="25dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/purple_200"
+                android:layout_height="200dp">
+
+                <ImageView
+                    android:id="@+id/ivBg"
+                    android:layout_width="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/logo"
+                    android:scaleType="fitXY"
+                    android:layout_height="150dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="-60dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="450dp"
+                    android:id="@+id/card"
+                    android:layout_margin="15dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="5dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:id="@+id/txSignUp"
+                                android:text="@string/sign_up"
+                                android:fontFamily="@font/robotoslabbold"
+                                android:textColor="@color/black"
+                                android:textSize="16dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:fontFamily="@font/robotoslabbold"
+                                android:id="@+id/txSignIn"
+                                android:text="@string/sign_in"
+                                android:textColor="@color/grey"
+                                android:textSize="16dp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:id="@+id/txLogin"
+                            android:visibility="gone"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_below="@+id/ll"
+                            android:text="Login with Phone Number"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cardEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/txLogin"
+                            android:visibility="visible"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/etEmail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginRight="0dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:background="@null"
+                                    android:fontFamily="@font/robotoslabregular"
+                                    android:hint="@string/name_exaple_com"
+                                    android:inputType="text"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card1"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/cardEmail"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="5dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.hbb20.CountryCodePicker
+                                    android:id="@+id/countryCodePicker"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true" />
+
+                                <EditText
+                                    android:id="@+id/etMobil"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginRight="0dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:fontFamily="@font/robotoslabregular"
+                                    android:maxLength="10"
+                                    android:layout_toRightOf="@+id/countryCodePicker"
+                                    android:background="@null"
+                                    android:hint="@string/mobile_number"
+                                    android:inputType="number"
+                                    android:paddingLeft="10dp"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_below="@+id/card1"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="35dp"
+                            android:id="@+id/btnSignUp"
+                            android:visibility="visible"
+                            android:fontFamily="@font/robotoslabbold"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:backgroundTint="@color/purple_200"
+                            android:text="@string/sign_up"
+                            app:cornerRadius="8dp">
+
+
+                        </com.google.android.material.button.MaterialButton>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_below="@+id/card1"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="25dp"
+                            android:id="@+id/btnSignIn"
+                            android:visibility="gone"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:backgroundTint="@color/purple_200"
+                            android:text="@string/sign_in"
+                            app:cornerRadius="8dp">
+
+
+                        </com.google.android.material.button.MaterialButton>
+
+
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:id="@+id/llIntegration"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:text="@string/connect_with_google"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    app:icon="@drawable/google"
+                    app:iconSize="25dp" android:fontFamily="@font/robotoslabbold"
+
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="15dp"
+                    android:layout_height="55dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:text="@string/connect_with_facebook"
+                    android:layout_weight="1"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/robotoslabbold"
+                    android:layout_marginRight="15dp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+                    android:layout_height="55dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/rlTerm"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:id="@+id/txtterm"
+            android:gravity="center"
+            android:fontFamily="@font/robotoslabbold"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/by_click_start_you_agree_to_our_terms_and_conditions"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

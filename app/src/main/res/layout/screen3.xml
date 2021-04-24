@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backnew"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:id="@+id/img"
+          android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/screen3"/>
+
+        <TextView
+            android:id="@+id/txt_gif"
+            android:layout_below="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:fontFamily="@font/robotoslabextrabold"
+            android:text="@string/track_your_ride"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/txt_new"
+            android:layout_below="@+id/txt_gif"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/robotoslabbold"
+            android:text="@string/know_your_driver_in_advance_and_be_nable_to_view_current_location_in_real_time_non_the_map"
+            android:textSize="15sp" />
+
+
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>
