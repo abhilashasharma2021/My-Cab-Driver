@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:text="Bid accepted, you are booked !"
+                android:background="@color/purple_700"
+                android:textSize="18sp"
+                android:fontFamily="@font/robotoslabextrabold"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/rl"
+            android:layout_marginTop="20dp"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/profile" />
+
+            <TextView
+                android:id="@+id/txtClientname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deepak Sharma"
+                android:textSize="16sp"
+                android:layout_toRightOf="@+id/profilePic"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:fontFamily="@font/robotoslabbold"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"/>
+
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="2dp"
+                android:layout_below="@+id/rating_Star"
+                android:layout_toLeftOf="@+id/txtsent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/sent"
+                android:id="@+id/ivsent"
+                />
+
+            <TextView
+
+                android:id="@+id/txtsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="5.2 Km "
+                android:layout_below="@+id/rating_Star"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
+                android:textColor="@color/grey"
+
+                />
+
+
+            <TextView
+                android:id="@+id/txtRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.1"
+                android:textSize="14sp"
+                android:layout_toRightOf="@+id/profilePic"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_below="@+id/txtClientname"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_Star"
+                style="?attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/txtRate"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/txtClientname"
+                android:saveEnabled="true"
+                android:theme="@style/RatingBar">
+
+            </androidx.appcompat.widget.AppCompatRatingBar>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="2dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pick_50"
+                android:id="@+id/ivPick"
+                app:tint="@color/purple_200" />
+
+            <TextView
+                android:id="@+id/txt_StartOnline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Pick Up  : "
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_toRightOf="@+id/ivPick"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+
+                android:textColor="@color/grey"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MP Nagar Bhopal "
+                android:textSize="14sp"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/txt_StartOnline"
+                android:gravity="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="2dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ponit"
+                android:id="@+id/ivdrop"
+             />
+
+            <TextView
+
+                android:id="@+id/txtdrop1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Drop off : "
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_toRightOf="@+id/ivdrop"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/grey"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="H No. 11 New Market Bhopal "
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/txtdrop1"
+                android:gravity="center" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:padding="2dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/location"
+                android:id="@+id/ivroute"
+                />
+
+            <TextView
+
+                android:id="@+id/txtroute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/robotoslabregular"
+                android:text="Route Distance : "
+                android:layout_toRightOf="@+id/ivroute"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/grey"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.5 Km"
+                android:textSize="14sp"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/txtroute"
+                android:gravity="center" />
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="25dp"
+            android:background="@color/view_Grey"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:weightSum="2"
+            >
+            <RelativeLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/txt_Accept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACCEPT"
+                    android:fontFamily="@font/robotoslabbold"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/purple_200"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/view_Grey"/>
+            <RelativeLayout
+                android:layout_width="250dp"
+
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/txt_Deny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/robotoslabbold"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="50dp"
+                    android:textColor="@color/text_red"
+                    android:text="CANCEL"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

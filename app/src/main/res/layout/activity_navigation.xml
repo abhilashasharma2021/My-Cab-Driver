@@ -197,7 +197,7 @@
 
 
                     <RelativeLayout
-                        android:id="@+id/rel_settings"
+                        android:id="@+id/rel_earning"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_toRightOf="@id/img2">
@@ -278,6 +278,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
+                    android:id="@+id/rlSetting"
                     android:layout_height="60dp">
 
                     <ImageView
@@ -289,7 +290,7 @@
 
 
                     <RelativeLayout
-                        android:id="@+id/rel_mcworld"
+                        android:id="@+id/rel_settings"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_toRightOf="@id/img3">

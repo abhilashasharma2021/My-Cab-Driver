@@ -1,6 +1,7 @@
 package com.mycab.Fragment;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -14,7 +15,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -37,6 +43,7 @@ ImageView menu,prf;
     GPSTracker gpsTracker;
     double lat, lng;
     LatLng latLng;
+    RelativeLayout goOnline;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +52,15 @@ ImageView menu,prf;
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         menu = view.findViewById(R.id.menu);
         prf = view.findViewById(R.id.prf);
+        goOnline = view.findViewById(R.id.goOnline);
+
+        goOnline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogAccept();
+            }
+        });
+
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,6 +115,29 @@ ImageView menu,prf;
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         mMap.addMarker(markerOptions);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8));
+    }
+    private void dialogAccept() {
+
+
+        Dialog dialog = new Dialog(getActivity());
+        dialog.setContentView(R.layout.dialog_accepted_layout);
+        dialog.setCancelable(true);
+        final TextView txt_Deny = (TextView) dialog.findViewById(R.id.txt_Deny);
+        final TextView txt_Accept = (TextView) dialog.findViewById(R.id.txt_Accept);
+
+        txt_Deny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+               /* strComment = edt_comment.getText().toString().trim();
+                strRating = String.valueOf(rating_Star.getRating());*/
+
+                //add_review();
+
+            }
+        });
+        dialog.show();
     }
 
 }

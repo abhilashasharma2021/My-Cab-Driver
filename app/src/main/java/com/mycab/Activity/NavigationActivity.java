@@ -22,7 +22,7 @@ import com.mycab.R;
 
 public class NavigationActivity extends AppCompatActivity implements View.OnClickListener {
     public static DrawerLayout drawer;
-    RelativeLayout rel_logout, rlNotification, rlEarning, rel_Trip, rel_settings;
+    RelativeLayout rel_logout, rlNotification, rlEarning, rel_Trip, rlSetting;
     ImageView prf;
 
 
@@ -39,6 +39,7 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
         rel_Trip = findViewById(R.id.rel_Trip);
         rlEarning = findViewById(R.id.rlNotification);
         rlNotification = findViewById(R.id.rlEarning);
+        rlSetting = findViewById(R.id.rlSetting);
        /* rel_mcworld = findViewById(R.id.rel_mcworld);
         prf = findViewById(R.id.prf);
         rel_profile = findViewById(R.id.rel_profile);
@@ -52,6 +53,7 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
         rel_Trip.setOnClickListener(this);
         rlNotification.setOnClickListener(this);
         rlEarning.setOnClickListener(this);
+        rlSetting.setOnClickListener(this);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeMapFragment()).commit();
@@ -90,8 +92,8 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
                 break;
 
 
-            case R.id.rel_settings:
-               // startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
+            case R.id.rlSetting:
+               startActivity(new Intent(getApplicationContext(), SettingActivity.class));
                 drawer.closeDrawer(GravityCompat.START);
                 break;
 
