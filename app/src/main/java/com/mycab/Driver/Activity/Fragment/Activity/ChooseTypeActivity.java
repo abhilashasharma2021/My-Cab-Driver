@@ -1,4 +1,4 @@
-package com.mycab.Activity;
+package com.mycab.Driver.Activity.Fragment.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.mycab.R;
 import com.mycab.databinding.ActivityChooseTypeBinding;
 
 public class ChooseTypeActivity extends AppCompatActivity {
@@ -20,9 +19,14 @@ ActivityChooseTypeBinding binding;
         binding.cardDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseTypeActivity.this,UploadDocumnetActivity.class));
+              startActivity(new Intent(ChooseTypeActivity.this,UploadDocumnetActivity.class));
             }
         });
-
+        binding.rlUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  startActivity(new Intent(ChooseTypeActivity.this, NavigationActivity.class));
+            }
+        });
     }
 }

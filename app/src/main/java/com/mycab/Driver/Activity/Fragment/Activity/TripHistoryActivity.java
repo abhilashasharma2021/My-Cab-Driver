@@ -1,21 +1,19 @@
-package com.mycab.Activity;
+package com.mycab.Driver.Activity.Fragment.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.mycab.R;
-import com.mycab.databinding.ActivityEarningBinding;
-import com.mycab.databinding.ActivityNotificationBinding;
+import com.mycab.databinding.ActivityTripHistoryBinding;
 
-public class NotificationActivity extends AppCompatActivity {
-ActivityNotificationBinding binding;
+public class TripHistoryActivity extends AppCompatActivity {
+ActivityTripHistoryBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityNotificationBinding.inflate(getLayoutInflater());
-        setContentView( binding.getRoot());
+        binding= ActivityTripHistoryBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

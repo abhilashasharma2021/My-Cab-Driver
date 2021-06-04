@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,10 +21,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.mycab.Activity.ChooseTypeActivity;
-import com.mycab.Activity.LoginActivity;
-import com.mycab.Activity.SignUpActivity;
-import com.mycab.databinding.ActivityMainBinding;
+import com.mycab.Driver.Activity.Fragment.Activity.SignUpActivity;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout dotsLayout;

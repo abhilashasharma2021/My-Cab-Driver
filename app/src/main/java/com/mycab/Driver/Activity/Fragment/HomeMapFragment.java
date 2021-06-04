@@ -1,4 +1,4 @@
-package com.mycab.Fragment;
+package com.mycab.Driver.Activity.Fragment;
 
 import android.Manifest;
 import android.app.Dialog;
@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
@@ -15,10 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -27,12 +23,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.mycab.Activity.NavigationActivity;
-import com.mycab.Activity.ProfileActivity;
+import com.mycab.Driver.Activity.Fragment.Activity.NavigationActivity;
+import com.mycab.Driver.Activity.Fragment.Activity.ProfileActivity;
 import com.mycab.R;
 import com.mycab.utils.GPSTracker;
 

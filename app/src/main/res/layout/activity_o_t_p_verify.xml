@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.OTPVerifyActivity">
+    tools:context=".Driver.Activity.Fragment.Activity.OTPVerifyActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,22 +89,23 @@
                     app:hideLineWhenFilled="false"
                     app:itemRadius="5dp"
                     app:itemSpacing="25dp"
-                    app:lineColor="@color/blue" />
+                    app:lineColor="@color/purple_200" />
 
 
 
             </RelativeLayout>
+
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVerify"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_below="@+id/rel"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="5dp"
-                android:id="@+id/btnSignIn"
                 android:backgroundTint="@color/purple_200"
-                android:text="@string/sign_in"
+                android:text="@string/verify"
                 app:cornerRadius="8dp">
 
 

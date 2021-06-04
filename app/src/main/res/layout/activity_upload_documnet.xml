@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.UploadDocumnetActivity">
+    tools:context=".Driver.Activity.Fragment.Activity.UploadDocumnetActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_marginBottom="60dp"
@@ -46,7 +46,7 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_Img"
+                    android:id="@+id/profileImg"
                     android:layout_width="220dp"
                     android:layout_height="220dp"
                     android:layout_centerHorizontal="true"
@@ -115,7 +115,7 @@
                     android:textColor="@color/black"/>
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnGovt"
                     android:layout_width="120dp"
                     android:layout_marginRight="15dp"
                     android:layout_alignParentRight="true"
@@ -263,6 +263,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_height="wrap_content"
                     android:text="@string/upload"
+                    android:visibility="gone"
                     android:fontFamily="@font/robotoslabbold"
                     app:strokeWidth="0.5dp"
                     app:strokeColor="@color/blue"
@@ -270,6 +271,22 @@
                     android:textColor="@color/purple_200"
                     android:textStyle="bold"
                     />
+
+                <EditText
+                    android:id="@+id/etTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Tax No."
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    />
+
             </RelativeLayout>
 
             <RelativeLayout

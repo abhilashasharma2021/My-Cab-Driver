@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.TripHistoryActivity">
+    tools:context=".Driver.Activity.Fragment.Activity.TripHistoryActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                         android:id="@+id/view"
                         android:layout_marginLeft="35dp"
                         android:layout_below="@+id/ivStart"
-                        android:background="@color/light_grey"/>
+                        android:background="@drawable/dottedhoriline"/>
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"

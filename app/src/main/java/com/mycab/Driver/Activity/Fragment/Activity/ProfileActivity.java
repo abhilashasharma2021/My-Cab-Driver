@@ -1,12 +1,9 @@
-package com.mycab.Activity;
+package com.mycab.Driver.Activity.Fragment.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.mycab.R;
 import com.mycab.databinding.ActivityProfileBinding;
 
 public class ProfileActivity extends AppCompatActivity {

@@ -14,6 +14,7 @@
     <color name="text_red">#EC2824</color>
     <color name="light_grey">#E3E3E3</color>
     <color name="light_blue">#6A0092DF</color>
+    <color name="icon">#ABA6A6</color>
     <array name="array1_dot_active">
         <item>@color/purple_200</item>
         <item>@color/purple_200</item>

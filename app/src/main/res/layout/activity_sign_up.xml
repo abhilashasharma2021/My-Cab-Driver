@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SignUpActivity">
+    tools:context=".Driver.Activity.Fragment.Activity.SignUpActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_marginBottom="25dp"
@@ -165,7 +165,7 @@
                                     android:layout_centerVertical="true" />
 
                                 <EditText
-                                    android:id="@+id/etMobil"
+                                    android:id="@+id/etMobile"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_alignParentEnd="true"
@@ -243,33 +243,91 @@
                 android:layout_marginTop="5dp"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
+
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="wrap_content"
                     android:text="@string/connect_with_google"
                     android:layout_weight="1"
-                    android:textSize="12sp"
-                    app:icon="@drawable/google"
-                    app:iconSize="25dp" android:fontFamily="@font/robotoslabbold"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="40dp">
 
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/black"
-                    android:textAllCaps="false"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="55dp"/>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
 
-                <com.google.android.material.button.MaterialButton
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:id="@+id/ivGoogle"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/google"
+                            android:layout_height="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_toRightOf="@+id/ivGoogle"
+                            android:id="@+id/txGoogle"
+                            android:layout_marginLeft="5dp"
+                            android:text="@string/connect_with_google"
+                            android:fontFamily="@font/robotoslabbold"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+
+
+                    </RelativeLayout>
+
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="wrap_content"
-                    android:text="@string/connect_with_facebook"
+                    android:text="@string/connect_with_google"
                     android:layout_weight="1"
-                    android:textSize="12sp"
-                    android:layout_marginLeft="10dp"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/robotoslabbold"
-                    android:layout_marginRight="15dp"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/black"
-                    android:layout_height="55dp"/>
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="40dp">
 
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:id="@+id/ivFacebook"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/facebook"
+                            android:layout_height="20dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:layout_toRightOf="@+id/ivFacebook"
+                            android:id="@+id/txFacebook"
+                            android:layout_marginLeft="5dp"
+                            android:text="@string/connect_with_facebook"
+                            android:fontFamily="@font/robotoslabbold"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+
+
+
+                    </RelativeLayout>
+
+
+
+                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
@@ -289,14 +347,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_weight="1"
             android:id="@+id/txtterm"
             android:gravity="center"
             android:fontFamily="@font/robotoslabbold"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:text="@string/by_click_start_you_agree_to_our_terms_and_conditions"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="13sp" />
 

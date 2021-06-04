@@ -1,4 +1,4 @@
-package com.mycab.Activity;
+package com.mycab.Driver.Activity.Fragment.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -15,9 +15,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.MapFragment;
-import com.mycab.Fragment.HomeMapFragment;
-import com.mycab.MainActivity;
+import com.mycab.Driver.Activity.Fragment.HomeMapFragment;
 import com.mycab.R;
 
 public class NavigationActivity extends AppCompatActivity implements View.OnClickListener {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ChooseTypeActivity">
+    tools:context=".Driver.Activity.Fragment.Activity.ChooseTypeActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -60,6 +60,7 @@
                                 <com.google.android.material.card.MaterialCardView
                                     android:layout_width="match_parent"
                                     android:layout_height="180dp"
+
                                     android:layout_marginLeft="15dp"
                                     android:layout_marginTop="30dp"
                                     android:layout_marginBottom="5dp"
@@ -69,6 +70,7 @@
 
                                     <RelativeLayout
                                         android:layout_width="match_parent"
+                                        android:id="@+id/rlUser"
                                         android:layout_height="wrap_content">
 
                                         <ImageView

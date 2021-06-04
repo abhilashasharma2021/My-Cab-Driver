@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.zeeh.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
@@ -21,37 +22,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCab">
-        <activity android:name=".Activity.SettingActivity"></activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.mycab.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name=".Driver.Activity.Fragment.Activity.SettingActivity" />
         <activity
-            android:name=".Activity.PaymentMethodActivity"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
-        <activity
-            android:name=".Activity.NotificationActivity"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
-        <activity
-            android:name=".Activity.EarningActivity"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity
-            android:name=".Activity.ProfileActivity"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity
-            android:name=".Activity.TripHistoryActivity"
+            android:name=".Driver.Activity.Fragment.Activity.PaymentMethodActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
-            android:name=".Activity.NavigationActivity"
+            android:name=".Driver.Activity.Fragment.Activity.NotificationActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Driver.Activity.Fragment.Activity.EarningActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Driver.Activity.Fragment.Activity.ProfileActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Driver.Activity.Fragment.Activity.TripHistoryActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".Driver.Activity.Fragment.Activity.NavigationActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
         <activity
-            android:name=".Activity.AddBankDetailActivity"
+            android:name=".Driver.Activity.Fragment.Activity.AddBankDetailActivity"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".Driver.Activity.Fragment.Activity.SplashActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
@@ -61,23 +73,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.UploadDocumnetActivity"
+            android:name=".Driver.Activity.Fragment.Activity.UploadDocumnetActivity"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
+        <activity
+            android:name=".Driver.Activity.Fragment.Activity.ChooseTypeActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
-            android:name=".Activity.ChooseTypeActivity"
+            android:name=".Driver.Activity.Fragment.Activity.OTPVerifyActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
-            android:name=".Activity.OTPVerifyActivity"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity
-            android:name=".Activity.LoginActivity"
-            android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity
-            android:name=".Activity.SignUpActivity"
+            android:name=".Driver.Activity.Fragment.Activity.SignUpActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
@@ -93,7 +101,16 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value=" AIzaSyBOvBH3mXpuEzjP-KCbCYyw3curznSY9uI" />
-
+        <!--
+  <service
+            android:name=".FCM.FCMMessageRecieverService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        -->
         <service
             android:name=".utils.GPSTracker"
             tools:ignore="Instantiatable" />

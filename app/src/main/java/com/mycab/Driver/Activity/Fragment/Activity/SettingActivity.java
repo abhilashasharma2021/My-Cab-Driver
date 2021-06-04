@@ -1,21 +1,18 @@
-package com.mycab.Activity;
+package com.mycab.Driver.Activity.Fragment.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.mycab.R;
-import com.mycab.databinding.ActivityEarningBinding;
-import com.mycab.databinding.ActivityOTPVerifyBinding;
+import com.mycab.databinding.ActivitySettingBinding;
 
-public class EarningActivity extends AppCompatActivity {
-ActivityEarningBinding binding;
+public class SettingActivity extends AppCompatActivity {
+ActivitySettingBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityEarningBinding.inflate(getLayoutInflater());
+        binding = ActivitySettingBinding.inflate(getLayoutInflater());
         setContentView( binding.getRoot());
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
