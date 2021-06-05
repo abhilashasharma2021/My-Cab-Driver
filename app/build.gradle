@@ -70,8 +70,8 @@ dependencies {
     //shape view
     implementation 'com.github.florent37:shapeofview:1.4.7'
     //map
-    implementation 'com.google.android.gms:play-services-maps:17.0.0'
-    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
 
     ///Networking
     implementation 'com.amitshekhar.android:android-networking:1.0.2'
@@ -86,9 +86,9 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.5.0'
 
     //notification
-    implementation 'com.google.firebase:firebase-analytics:17.4.3'
-    implementation 'com.google.firebase:firebase-messaging:20.2.1'
-    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.firebase:firebase-analytics:19.0.0'
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
     implementation 'com.squareup.okhttp3:okhttp:3.5.0'
 }

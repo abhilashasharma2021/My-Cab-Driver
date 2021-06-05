@@ -18,11 +18,6 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
-import com.mycab.MainActivity;
 import com.mycab.R;
 import com.mycab.databinding.ActivitySignUpBinding;
 import com.mycab.utils.Api;
@@ -39,6 +34,7 @@ import java.util.regex.Pattern;
 public class SignUpActivity extends AppCompatActivity {
 ActivitySignUpBinding binding;
 String stMobile="",stEmail="";
+    String  regID="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,24 +73,11 @@ String stMobile="",stEmail="";
             //alreadyRegister.setText("Already Registered?");
         });
 
-           FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
 
-                        if (task.isSuccessful()) {
-                            String token = task.getResult().getToken();
-                            Log.e("dncjksdn", token);
-                            SharedHelper.putKey(getApplicationContext(), Appconstant.REG_ID_TOKEN, token);
 
-                        }
-                        else {
+       regID = SharedHelper.getKey(getApplicationContext(), Appconstant.REG_ID_TOKEN);
+        Log.e("sfagsggda", "regID: " +regID);
 
-                            Toast.makeText(SignUpActivity.this, "Token generation failed", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-                });
 
 
 

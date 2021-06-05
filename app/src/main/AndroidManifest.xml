@@ -101,16 +101,14 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value=" AIzaSyBOvBH3mXpuEzjP-KCbCYyw3curznSY9uI" />
-        <!--
   <service
-            android:name=".FCM.FCMMessageRecieverService"
+            android:name=".Driver.Activity.Fragment.FCM.FirebaseMessageRecieverService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-        -->
         <service
             android:name=".utils.GPSTracker"
             tools:ignore="Instantiatable" />

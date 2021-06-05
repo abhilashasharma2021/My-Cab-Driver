@@ -26,7 +26,7 @@ import org.json.JSONObject;
 public class AddBankDetailActivity extends AppCompatActivity {
     ActivityAddBankDetailBinding binding;
     String stAccount = "", stIfsc = "";
-
+    String regID="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,10 @@ public class AddBankDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        regID = SharedHelper.getKey(getApplicationContext(), Appconstant.REG_ID_TOKEN);
+        Log.e("fdgbfbhgf", "regID: " +regID);
+
 
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,6 +125,7 @@ public class AddBankDetailActivity extends AppCompatActivity {
                 .addBodyParameter("email", UserEmail)
                 .addBodyParameter("mobile", UserMobile)
                 .addBodyParameter("user_id", UserID)
+                .addBodyParameter("regid", regID)
                 .addBodyParameter("type", "0")/* type=0 Driver type= 1 user*/
                 .setPriority(Priority.HIGH)
                 .build()
