@@ -18,6 +18,7 @@ import com.mycab.utils.Appconstant;
 import com.mycab.utils.SharedHelper;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,49 +35,64 @@ public class FirebaseMessageRecieverService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
         Log.e("check", "onMessageRecieved Called");
 
-        if (remoteMessage.getNotification() != null) {
 
-            String title = remoteMessage.getNotification().getTitle();
-
-            if (remoteMessage.getNotification().getBody() != null) {
-                body = remoteMessage.getNotification().getBody();
-            }else {
-                body="MyCab";
-            }
-
-
-            Log.e("sjjcbs", "ii" + title);
-            Log.e("sjjcbs", "ii" + body);
-
-            Intent myIntent = new Intent("Check");
-            myIntent.putExtra("action", title);
-            myIntent.putExtra("message", body);
-            this.sendBroadcast(myIntent);
-
-            if (!body.equals("null")) {
-
-                if (body.equals("Message from Support")) {
-                    Log.e("ppowsaq", "Message from support");
-
-                } else {
-                    Notification notification = new NotificationCompat.Builder(this, App.FCM_CHANNEL_ID)
-                            .setSmallIcon(R.drawable.logo)
-                            .setContentTitle(title)
-                            .setContentText(body)
-                            .setPriority(PRIORITY_HIGH)
-                            .setColor(Color.BLACK)
-                            .setSound(null)
-                            .setDefaults(Notification.DEFAULT_ALL)
-                            .build();
-
-                    NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                    manager.notify(1002, notification); } } }
 
         if (remoteMessage.getData().size() > 0) {
             Log.e("check", "Data received");
             Log.e("check", remoteMessage.getData().toString());
+
             try {
-                JSONObject jsonObject = new JSONObject(remoteMessage.getData().toString());
+                String Data = remoteMessage.getData().toString();
+                String newData = "";
+                if (Data.contains("=")) {
+                    newData = Data.replace("=", ":");
+                }
+
+                Log.e("check", "newData: " +newData);
+                JSONObject jsonObject=new JSONObject(newData);
+                JSONObject data =new JSONObject(jsonObject.getString("data"));
+                Log.e("check", "data: " +data);
+                String title = data.getString("title");
+                String message = data.getString("message");
+                String payload = data.getString("payload");
+                String id="";
+                JSONObject jsonObject1=new JSONObject(payload);
+                JSONArray jsonArray=new JSONArray(jsonObject1.getString("driver_ride"));
+                for (int i = 0; i <jsonArray.length() ; i++) {
+
+                    JSONObject jsonObject2=jsonArray.getJSONObject(i);
+                     id=jsonObject2.getString("id");
+                }
+
+
+
+                Log.e("check", "title: " +title);
+                Log.e("check", "message: " +message);
+                Log.e("check", "id: " +id);
+
+                Intent myIntent = new Intent("Check");
+                myIntent.putExtra("title", title);
+                myIntent.putExtra("id", id);
+                this.sendBroadcast(myIntent);
+
+                Notification notification = new NotificationCompat.Builder(this, App.FCM_CHANNEL_ID)
+                        .setSmallIcon(R.drawable.logo)
+                        .setContentTitle(title)
+                        .setContentText(message)
+                        .setPriority(PRIORITY_HIGH)
+                        .setColor(Color.BLACK)
+                        .setSound(null)
+                        .setDefaults(Notification.DEFAULT_ALL)
+                        .build();
+
+                NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                manager.notify(1002, notification);
+
+
+
+
+
+
                 //  handleDataMessage(jsonObject);
             } catch (JSONException e) {
 
@@ -85,7 +101,7 @@ public class FirebaseMessageRecieverService extends FirebaseMessagingService {
     @Override
     public void onDeletedMessages() {
         super.onDeletedMessages();
-        Log.e("check", "onDeleteMessage Called");
+        Log.e("hfhghdggdhhgdhgd", "onDeleteMessage Called");
     }
 
     @Override

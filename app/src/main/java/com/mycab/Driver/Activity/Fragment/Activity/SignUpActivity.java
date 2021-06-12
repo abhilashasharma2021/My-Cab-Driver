@@ -1,8 +1,6 @@
 package com.mycab.Driver.Activity.Fragment.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
@@ -79,6 +77,29 @@ String stMobile="",stEmail="";
         Log.e("sfagsggda", "regID: " +regID);
 
 
+
+
+        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                 stMobile = binding.etMobile.getText().toString().trim();
+
+
+
+                if (validationSignIn()){
+                  /*call api*/
+                    loginGenrateOtp();
+                }
+
+               else {
+
+                    validationSignIn();
+                }
+
+
+            }
+        });
 
 
 
@@ -207,6 +228,28 @@ String stMobile="",stEmail="";
         return boolen;
     }
 
+
+    private Boolean validationSignIn(){
+
+        Boolean boolen=false;
+        if (binding.etMobile.getText().toString().isEmpty()){
+
+            binding.etMobile.setError("Mobile Number Must Required");
+        }
+        else  if (stMobile.length()<10){
+
+            binding.etMobile.setError("Please enter atleast 10 digit mobile number");
+        }
+
+
+        else {
+            boolen=true;
+
+        }
+        return boolen;
+    }
+
+
     public void genrate_otp() {
          CustomDialog dialog = new CustomDialog();
         dialog.showDialog(R.layout.progress_layout, this);
@@ -270,4 +313,71 @@ String stMobile="",stEmail="";
 
 
     }
+
+
+
+    private void loginGenrateOtp(){
+
+        CustomDialog dialog = new CustomDialog();
+        dialog.showDialog(R.layout.progress_layout, this);
+
+
+
+        Log.e("fdhfgh", "stMobile: " +stMobile);
+        AndroidNetworking.post(Api.BASE_URL+Api.login)
+                .addBodyParameter("mobile", stMobile)
+                .addBodyParameter("regid", regID)
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e("dsvdcxv", response.toString());
+                        dialog.hideDialog();
+
+                        try {
+                            if (response.getString("result").equals("Otp Sent Successfully")) {
+
+                                String phone_number=response.getString("phone_number");
+                                String otp=response.getString("otp");
+                                String email=response.getString("email");
+
+                                Log.e("dvgfdb", "phone_number: " +phone_number);
+                                SharedHelper.putKey(getApplicationContext(), Appconstant.UserID, response.getString("id"));
+                                SharedHelper.putKey(getApplicationContext(), Appconstant.UserEmail, response.getString("email"));
+                                SharedHelper.putKey(getApplicationContext(), Appconstant.UserMobile, response.getString("phone_number"));
+                                SharedHelper.putKey(getApplicationContext(), Appconstant.GetOtp,response.getString("otp"));
+
+                                Toast toast = Toast.makeText(SignUpActivity.this, response.getString("result"), Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
+
+                                startActivity(new Intent(SignUpActivity.this, OTPVerifyActivity.class));
+                                finish();
+
+
+                            } else {
+
+                                Toast toast = Toast.makeText(SignUpActivity.this, response.getString("result"), Toast.LENGTH_LONG);
+                                toast.setGravity(Gravity.CENTER, 0, 0);
+                                toast.show();
+                                dialog.hideDialog();
+                            }
+
+
+                        } catch (JSONException e) {
+                            Log.e("dsfgvbdfb", "onResponse: " +e);
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        Log.e("dsfgvbdfb", "anError: " +anError);
+                    }
+                });
+
+    }
+
+
 }

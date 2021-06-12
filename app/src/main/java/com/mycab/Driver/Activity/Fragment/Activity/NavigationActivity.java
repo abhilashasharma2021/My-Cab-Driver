@@ -16,7 +16,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mycab.Driver.Activity.Fragment.HomeMapFragment;
+import com.mycab.MainActivity;
 import com.mycab.R;
+import com.mycab.utils.Appconstant;
+import com.mycab.utils.SharedHelper;
 
 public class NavigationActivity extends AppCompatActivity implements View.OnClickListener {
     public static DrawerLayout drawer;
@@ -44,14 +47,13 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
         rel_settings = findViewById(R.id.rel_settings);*/
         name = findViewById(R.id.name);
         number = findViewById(R.id.number);
-       /* rel_logout.setOnClickListener(this);
-        rel_notifications.setOnClickListener(this);
-        rel_profile.setOnClickListener(this);
-        rel_mcworld.setOnClickListener(this);*/
+
+
         rel_Trip.setOnClickListener(this);
         rlNotification.setOnClickListener(this);
         rlEarning.setOnClickListener(this);
         rlSetting.setOnClickListener(this);
+        rel_logout.setOnClickListener(this);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeMapFragment()).commit();
@@ -74,7 +76,7 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
 
             case R.id.rel_logout:
-             logout();
+                logout();
                 break;
 
 
@@ -125,9 +127,9 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
         btn_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* SharedHelper.putKey(getApplicationContext(), AppConstats.USER_ID, "");
+               SharedHelper.putKey(getApplicationContext(), Appconstant.UserID, "");
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();*/
+                finish();
             }
         });
 

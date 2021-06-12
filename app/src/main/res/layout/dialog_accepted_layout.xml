@@ -13,7 +13,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
-                android:text="Bid accepted, you are booked !"
+                android:text="Request"
                 android:background="@color/purple_700"
                 android:textSize="18sp"
                 android:fontFamily="@font/robotoslabextrabold"
@@ -48,12 +48,28 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
                 android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/txtNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deepak Sharma"
+                android:textSize="13sp"
+                android:layout_toRightOf="@+id/profilePic"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_below="@+id/txtClientname"
+                android:fontFamily="@font/robotoslabregular"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"/>
+
 
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:padding="2dp"
+                android:visibility="gone"
                 android:layout_below="@+id/rating_Star"
                 android:layout_toLeftOf="@+id/txtsent"
                 android:layout_marginLeft="5dp"
@@ -69,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:text="5.2 Km "
+                android:visibility="gone"
                 android:layout_below="@+id/rating_Star"
                 android:fontFamily="@font/robotoslabregular"
                 android:layout_marginRight="5dp"
@@ -85,6 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4.1"
+                android:visibility="gone"
                 android:textSize="14sp"
                 android:layout_toRightOf="@+id/profilePic"
                 android:textAlignment="center"
@@ -102,6 +120,7 @@
                 android:layout_height="wrap_content"
                 android:isIndicator="false"
                 android:numStars="5"
+                android:visibility="gone"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/txtRate"
@@ -151,6 +170,7 @@
                 android:layout_height="wrap_content"
                 android:text="MP Nagar Bhopal "
                 android:textSize="14sp"
+                android:id="@+id/txPickAddress"
                 android:fontFamily="@font/robotoslabregular"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/txt_StartOnline"
@@ -192,6 +212,7 @@
                 android:layout_height="wrap_content"
                 android:text="H No. 11 New Market Bhopal "
                 android:textSize="14sp"
+                android:id="@+id/txDropAddress"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/txtdrop1"
                 android:gravity="center" />
@@ -231,6 +252,7 @@
                 android:layout_height="wrap_content"
                 android:text="10.5 Km"
                 android:textSize="14sp"
+                android:id="@+id/txDistance"
                 android:fontFamily="@font/robotoslabregular"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@+id/txtroute"
