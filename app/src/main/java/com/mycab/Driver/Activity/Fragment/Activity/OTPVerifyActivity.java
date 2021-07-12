@@ -91,12 +91,17 @@ String getEmail="",getOTP="",getMobile="",pin;
     }
 
     private void verify_otp(){
+
+        Log.e("check", "getEmail: " +getEmail);
+        Log.e("check", "getMobile: " +getMobile);
+        Log.e("check", "pin: " +pin);
        CustomDialog dialog = new CustomDialog();
         dialog.showDialog(R.layout.progress_layout, this);
         AndroidNetworking.post(Api.BASE_URL+Api.verify_otp)
                 .addBodyParameter("email",getEmail)
                 .addBodyParameter("mobile",getMobile)
-                .addBodyParameter("otp",getOTP)
+                .addBodyParameter("type", "0")/* type=0 Driver type= 1 user*/
+                .addBodyParameter("otp",pin)
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -123,12 +128,20 @@ String getEmail="",getOTP="",getMobile="",pin;
                                        startActivity(new Intent(OTPVerifyActivity.this,UploadDocumnetActivity.class));
                                    }
                                    else {
+
+                                       SharedHelper.putKey(getApplicationContext(), Appconstant.UserID, object.getString("id"));
+                                       SharedHelper.putKey(getApplicationContext(), Appconstant.UserName, object.getString("name"));
+                                       SharedHelper.putKey(getApplicationContext(), Appconstant.UserEmail, object.getString("email"));
+                                       SharedHelper.putKey(getApplicationContext(), Appconstant.UserMobile, object.getString("phone_number"));
                                        startActivity(new Intent(OTPVerifyActivity.this,NavigationActivity.class));
                                    }
 
                                 Toast.makeText(OTPVerifyActivity.this, response.getString("result"), Toast.LENGTH_SHORT).show();
 
 
+                            }
+                            else {
+                                Toast.makeText(OTPVerifyActivity.this, response.getString("result"), Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (JSONException e) {

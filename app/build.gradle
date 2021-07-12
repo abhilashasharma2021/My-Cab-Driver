@@ -91,5 +91,13 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
     implementation 'com.squareup.okhttp3:okhttp:3.5.0'
+
+    ///styleabletoast
+    implementation 'com.muddzdev:styleabletoast:2.2.3'
+
+
+    //crop image
+    implementation 'com.github.yalantis:ucrop:2.2.6'
+
 }
 apply plugin: 'com.google.gms.google-services'

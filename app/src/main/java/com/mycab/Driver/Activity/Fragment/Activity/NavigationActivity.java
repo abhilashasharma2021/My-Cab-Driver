@@ -9,34 +9,50 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.bumptech.glide.Glide;
 import com.mycab.Driver.Activity.Fragment.HomeMapFragment;
 import com.mycab.MainActivity;
 import com.mycab.R;
+import com.mycab.utils.Api;
 import com.mycab.utils.Appconstant;
 import com.mycab.utils.SharedHelper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class NavigationActivity extends AppCompatActivity implements View.OnClickListener {
     public static DrawerLayout drawer;
     RelativeLayout rel_logout, rlNotification, rlEarning, rel_Trip, rlSetting;
-    ImageView prf;
+    TextView name,number,rating;
+    String getUserID="";
+    CircleImageView prf;
 
-
-    String getUsername = "", getNumber = "";
-    TextView name,number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
+        getUserID = SharedHelper.getKey(getApplicationContext(), Appconstant.UserID);
+        Log.e("NavigationActivity", "getUserID: " +getUserID);
+
         drawer = findViewById(R.id.drawer);
         rel_logout = findViewById(R.id.rel_logout);
+        rating = findViewById(R.id.rating);
+        prf = findViewById(R.id.prf);
         rel_Trip = findViewById(R.id.rel_Trip);
         rlEarning = findViewById(R.id.rlNotification);
         rlNotification = findViewById(R.id.rlEarning);
@@ -58,6 +74,9 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeMapFragment()).commit();
         }
+
+
+        show_profile();
     }
    /* @Override
     protected void onResume() {
@@ -143,6 +162,49 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
 
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
+
+    }
+
+    private void show_profile(){
+
+        getUserID = SharedHelper.getKey(getApplicationContext(), Appconstant.UserID);
+        Log.e("rtrhgfhg", "getUserID: " +getUserID);
+
+        AndroidNetworking.post(Api.BASE_URL+Api.show_profile)
+                .addBodyParameter("user_id",getUserID)
+                .setPriority(Priority.HIGH)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.e("NavigationActivity", "response: " +response);
+
+                        try {
+
+                            name.setText(response.getString("name"));
+                            number.setText(response.getString("phone_number"));
+                            rating.setText(response.getString("avg_rating"));
+
+
+                            try {
+                                Glide.with(NavigationActivity.this).load(response.getString("path")+response.getString("image")).into(prf);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+
+                        } catch (JSONException e) {
+                            Log.e("sdfhdsf", "e: " +e.getMessage());
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+                        Log.e("sdfhdsf", "anError: " +anError.getMessage());
+                    }
+                });
+
 
     }
 }

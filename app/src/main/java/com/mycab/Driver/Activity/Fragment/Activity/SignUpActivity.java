@@ -320,12 +320,10 @@ String stMobile="",stEmail="";
 
         CustomDialog dialog = new CustomDialog();
         dialog.showDialog(R.layout.progress_layout, this);
-
-
-
         Log.e("fdhfgh", "stMobile: " +stMobile);
         AndroidNetworking.post(Api.BASE_URL+Api.login)
                 .addBodyParameter("mobile", stMobile)
+
                 .addBodyParameter("regid", regID)
                 .setPriority(Priority.HIGH)
                 .build()
@@ -343,7 +341,7 @@ String stMobile="",stEmail="";
                                 String email=response.getString("email");
 
                                 Log.e("dvgfdb", "phone_number: " +phone_number);
-                                SharedHelper.putKey(getApplicationContext(), Appconstant.UserID, response.getString("id"));
+
                                 SharedHelper.putKey(getApplicationContext(), Appconstant.UserEmail, response.getString("email"));
                                 SharedHelper.putKey(getApplicationContext(), Appconstant.UserMobile, response.getString("phone_number"));
                                 SharedHelper.putKey(getApplicationContext(), Appconstant.GetOtp,response.getString("otp"));

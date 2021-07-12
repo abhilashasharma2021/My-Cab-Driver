@@ -259,6 +259,7 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:id="@+id/ivGoogle"
+                            android:layout_marginLeft="5dp"
                             android:layout_centerVertical="true"
                             android:src="@drawable/google"
                             android:layout_height="20dp"/>
@@ -267,9 +268,9 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:gravity="center"
+                            android:layout_marginLeft="3dp"
                             android:layout_toRightOf="@+id/ivGoogle"
                             android:id="@+id/txGoogle"
-                            android:layout_marginLeft="5dp"
                             android:text="@string/connect_with_google"
                             android:fontFamily="@font/robotoslabbold"
                             android:textColor="@color/black"
@@ -303,6 +304,7 @@
                         <ImageView
                             android:layout_width="20dp"
                             android:id="@+id/ivFacebook"
+                            android:layout_marginLeft="5dp"
                             android:layout_centerVertical="true"
                             android:src="@drawable/facebook"
                             android:layout_height="20dp"/>

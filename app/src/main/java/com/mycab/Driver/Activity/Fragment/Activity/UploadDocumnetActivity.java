@@ -1,5 +1,6 @@
 package com.mycab.Driver.Activity.Fragment.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,6 +33,7 @@ import com.mycab.utils.Appconstant;
 import com.mycab.utils.ImageUtils;
 import com.mycab.utils.ProgressBarCustom.CustomDialog;
 import com.mycab.utils.SharedHelper;
+import com.yalantis.ucrop.UCrop;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +55,10 @@ public class UploadDocumnetActivity extends AppCompatActivity {
     String stName = "", stTax = "";
     File f;
 
+    public static final int CODE_FRONT_GOVT_IMG = 3;
+    public static final String CROP_IMAGE = "Cropped_Image";
+  public static ImageView imgFront,imgBack;
+     int getImgCode  =0;
     private File front_gallery_file;
     private File back_gallery_file;
     private  File fileGovtFront,fileGovtBack,fileDrivingBack,fileDrivingFront,fileCommericalFront,fileCommericalBack,fileRCFront,fileRCBack;
@@ -94,7 +100,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                 else if (fronIvGovt.equals("")){
                     Toast.makeText(UploadDocumnetActivity.this, "Please Choose the GovtId Front Image ", Toast.LENGTH_SHORT).show();
                 }
-                else if (backIvGovt.equals("")){
+               /* else if (backIvGovt.equals("")){
                     Toast.makeText(UploadDocumnetActivity.this, "Please Choose the GovtId Back Image ", Toast.LENGTH_SHORT).show();
                 }
                 else if (frontIvDriving.equals("")){
@@ -115,7 +121,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                 }
                 else if (backIvRc.equals("")){
                     Toast.makeText(UploadDocumnetActivity.this, "Please Choose the Registration Id back Image ", Toast.LENGTH_SHORT).show();
-                }
+                }*/
                 else {
                     upload_Document();
                 }
@@ -228,6 +234,208 @@ public class UploadDocumnetActivity extends AppCompatActivity {
             saveImage(thumbnail);
             Toast.makeText(getApplicationContext(), "Image Saved!", Toast.LENGTH_SHORT).show();
         }
+
+        ///////////////////////////////////////////////CROP IMAGE////////////////////////////////////////////////////////////////////
+
+        if (getImgCode ==1){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
+
+                Uri imageUri = data.getData();
+
+
+                imgFront.setImageURI(imageUri);
+
+                if (imageUri != null) {
+                    startCrop(imageUri);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileGovtFront= new File(imageUriResultCrop.getEncodedPath());
+                fronIvGovt = fileGovtFront.toString();
+                Log.e("imageUri", fronIvGovt);
+                imgFront.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }else if (getImgCode==2){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgBack.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileGovtBack = new File(imageUriResultCrop.getEncodedPath());
+                backIvGovt = fileGovtBack.toString();
+                Log.e("imageUri", backIvGovt);
+                imgBack.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+        else if (getImgCode==3){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgFront.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileDrivingFront = new File(imageUriResultCrop.getEncodedPath());
+                frontIvDriving = fileDrivingFront.toString();
+                Log.e("imageUri", frontIvDriving);
+                imgFront.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+        else if (getImgCode==4){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgBack.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileDrivingBack= new File(imageUriResultCrop.getEncodedPath());
+                backIvDriving = fileDrivingBack.toString();
+                Log.e("imageUri", backIvDriving);
+                imgBack.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+
+        else if (getImgCode==5){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgFront.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileCommericalFront = new File(imageUriResultCrop.getEncodedPath());
+              frontIvCommerical = fileCommericalFront.toString();
+                Log.e("imageUri", frontIvCommerical);
+                imgFront.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+
+        else if (getImgCode==6){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgBack.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileCommericalBack = new File(imageUriResultCrop.getEncodedPath());
+              backIvCommerical= fileCommericalBack.toString();
+                Log.e("imageUri", backIvCommerical);
+                imgBack.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+        else if (getImgCode==7){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgFront.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileRCFront = new File(imageUriResultCrop.getEncodedPath());
+                frontIvRc = fileRCFront.toString();
+                Log.e("imageUri", frontIvRc);
+                imgFront.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+        else if (getImgCode==8){
+
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+
+                Uri imageUriBack = data.getData();
+
+
+                imgBack.setImageURI(imageUriBack);
+
+                if (imageUriBack != null) {
+                    startCrop(imageUriBack);
+                }
+
+            }
+            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+
+                Uri imageUriResultCrop = UCrop.getOutput(data);
+                fileRCBack = new File(imageUriResultCrop.getEncodedPath());
+               backIvRc = fileRCBack.toString();
+                Log.e("imageUri", backIvRc);
+                imgBack.setImageURI(imageUriResultCrop);
+                Log.e("SDfsdfsdf","OK");
+            }
+        }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
     }
 
     public String saveImage(Bitmap myBitmap) {
@@ -267,10 +475,30 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-        ImageView imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-        ImageView imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+       imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+       imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
+
         imgFront.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getImgCode = 1;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+            }
+        });
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getImgCode = 2;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+            }
+        });
+      /*  imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RxMediaPicker.builder(UploadDocumnetActivity.this)
@@ -310,7 +538,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                         });
 
             }
-        });
+        });*/
         btDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -328,13 +556,17 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-        ImageView imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-        ImageView imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+         imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+         imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
         imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxMediaPicker.builder(UploadDocumnetActivity.this)
+                getImgCode = 3;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+              /*  RxMediaPicker.builder(UploadDocumnetActivity.this)
                         .pick(Purpose.Pick.IMAGE)
                         .take(Purpose.Take.PHOTO)
                         .build()
@@ -347,7 +579,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             Log.e("drivingFront", "drivingFront: " + fileDrivingFront);
 
 
-                        });
+                        });*/
 
             }
         });
@@ -356,8 +588,11 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                RxMediaPicker.builder(UploadDocumnetActivity.this)
+                getImgCode = 4;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+              /*  RxMediaPicker.builder(UploadDocumnetActivity.this)
                         .pick(Purpose.Pick.IMAGE)
                         .take(Purpose.Take.PHOTO)
                         .build()
@@ -368,7 +603,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             backIvDriving = back_gallery_file.toString();
                             fileDrivingBack = new File(backIvDriving);
                             Log.e("drivingBack", "drivingBack: " + fileDrivingBack);
-                        });
+                        });*/
 
             }
         });
@@ -390,13 +625,17 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-        ImageView imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-        ImageView imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+       imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+      imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
         imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxMediaPicker.builder(UploadDocumnetActivity.this)
+                getImgCode = 5;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+             /*   RxMediaPicker.builder(UploadDocumnetActivity.this)
                         .pick(Purpose.Pick.IMAGE)
                         .take(Purpose.Take.PHOTO)
                         .build()
@@ -409,7 +648,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             Log.e("CommericalFront", "CommericalFront: " + fileCommericalFront);
 
 
-                        });
+                        });*/
 
             }
         });
@@ -419,7 +658,12 @@ public class UploadDocumnetActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                RxMediaPicker.builder(UploadDocumnetActivity.this)
+                getImgCode = 6;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+
+              /*  RxMediaPicker.builder(UploadDocumnetActivity.this)
                         .pick(Purpose.Pick.IMAGE)
                         .take(Purpose.Take.PHOTO)
                         .build()
@@ -430,7 +674,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             backIvCommerical = back_gallery_file.toString();
                             fileCommericalBack = new File(backIvCommerical);
                             Log.e("CommericalBack", "CommericalBack: " + fileCommericalBack);
-                        });
+                        });*/
 
             }
         });
@@ -452,13 +696,17 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-        ImageView imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-        ImageView imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+         imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+         imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
         imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RxMediaPicker.builder(UploadDocumnetActivity.this)
+                getImgCode = 7;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+               /* RxMediaPicker.builder(UploadDocumnetActivity.this)
                         .pick(Purpose.Pick.IMAGE)
                         .take(Purpose.Take.PHOTO)
                         .build()
@@ -471,7 +719,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             Log.e("RcFront", "RcFront: " + fileRCFront);
 
 
-                        });
+                        });*/
 
             }
         });
@@ -480,8 +728,11 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                RxMediaPicker.builder(UploadDocumnetActivity.this)
+                getImgCode = 8;
+                startActivityForResult(new Intent()
+                        .setAction(Intent.ACTION_GET_CONTENT)
+                        .setType("image/*"), CODE_FRONT_GOVT_IMG);
+               /* RxMediaPicker.builder(UploadDocumnetActivity.this)
                         .pick(Purpose.Pick.IMAGE)
                         .take(Purpose.Take.PHOTO)
                         .build()
@@ -493,7 +744,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             fileRCBack = new File(backIvRc);
                             Log.e("RcBack", "RcBack: " + fileRCFront);
                         });
-
+*/
             }
         });
         btDone.setOnClickListener(new View.OnClickListener() {
@@ -508,6 +759,17 @@ public class UploadDocumnetActivity extends AppCompatActivity {
     }
 
     private void upload_Document(){
+
+        Log.e("fghfghjfgjgh", "f: " +f.getAbsolutePath());
+        Log.e("fghfghjfgjgh", "fileGovtFront: " +fileGovtFront);
+        Log.e("fghfghjfgjgh", "fileGovtBack: " +fileGovtBack);
+        Log.e("fghfghjfgjgh", "fileDrivingFront: " +fileDrivingFront);
+        Log.e("fghfghjfgjgh", "fileDrivingBack: " +fileDrivingBack);
+        Log.e("fghfghjfgjgh", "fileCommericalFront: " +fileCommericalFront);
+        Log.e("fghfghjfgjgh", "fileCommericalBack: " +fileCommericalBack);
+        Log.e("fghfghjfgjgh", "fileRCFront: " +fileRCFront);
+        Log.e("fghfghjfgjgh", "fileRCBack: " +fileRCBack);
+
         String UserID = SharedHelper.getKey(getApplicationContext(), Appconstant.UserID);
         CustomDialog dialog = new CustomDialog();
         dialog.showDialog(R.layout.progress_layout, this);
@@ -566,6 +828,36 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     }
                 });
 
+
+    }
+    private void startCrop(@NonNull Uri uri) {
+
+        String destinationFileName = CROP_IMAGE;
+        destinationFileName += ".jpg";
+
+        String directoryPath = Environment.getExternalStorageDirectory() + "/" + IMAGE_DIRECTORY + "/";
+        String filePath = directoryPath + ".jpg";
+
+        UCrop uCrop = UCrop.of(uri, Uri.fromFile(new File(getExternalCacheDir().getAbsolutePath(), destinationFileName)));
+
+        uCrop.withAspectRatio(1, 1)
+                .withMaxResultSize(600, 600)
+                .withOptions(getOptions())
+                .start(this);
+
+    }
+
+
+    private UCrop.Options getOptions() {
+
+        UCrop.Options options = new UCrop.Options();
+        options.setCompressionQuality(40);
+        options.setHideBottomControls(false);
+        options.setFreeStyleCropEnabled(true);
+        options.setStatusBarColor(getResources().getColor(R.color.purple_200));
+        options.setToolbarColor(getResources().getColor(R.color.purple_200));
+        options.setToolbarTitle("Crop Image");
+        return options;
 
     }
 

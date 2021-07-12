@@ -36,6 +36,7 @@
         </provider>
 
         <activity android:name=".Driver.Activity.Fragment.Activity.SettingActivity" />
+
         <activity
             android:name=".Driver.Activity.Fragment.Activity.PaymentMethodActivity"
             android:configChanges="orientation|screenSize"
@@ -65,16 +66,26 @@
         <activity
             android:name=".Driver.Activity.Fragment.Activity.AddBankDetailActivity"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+
+
+
+
+        </activity>
+
+
         <activity
             android:name=".Driver.Activity.Fragment.Activity.SplashActivity"
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
         <activity
             android:name=".Driver.Activity.Fragment.Activity.UploadDocumnetActivity"
@@ -82,6 +93,12 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
 
         </activity>
+
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Driver.Activity.Fragment.Activity.ChooseTypeActivity"
             android:configChanges="orientation|screenSize"
@@ -106,7 +123,7 @@
         <!-- Jitu sir provide me -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value=" AIzaSyBOvBH3mXpuEzjP-KCbCYyw3curznSY9uI" />
+            android:value="AIzaSyCJuMnRukkohrMxeK_zcN8pbdzUuCHa-PE" />
   <service
             android:name=".Driver.Activity.Fragment.FCM.FirebaseMessageRecieverService"
             android:exported="false">
