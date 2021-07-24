@@ -25,7 +25,7 @@ import org.json.JSONObject;
 
 public class OTPVerifyActivity extends AppCompatActivity {
 ActivityOTPVerifyBinding binding;
-String getEmail="",getOTP="",getMobile="",pin;
+String getEmail="",getOTP="",getMobile="",pin,getId="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +42,7 @@ String getEmail="",getOTP="",getMobile="",pin;
         getEmail = SharedHelper.getKey(getApplicationContext(), Appconstant.UserEmail);
         getOTP = SharedHelper.getKey(getApplicationContext(), Appconstant.GetOtp);
         getMobile = SharedHelper.getKey(getApplicationContext(), Appconstant.UserMobile);
+        getId = SharedHelper.getKey(getApplicationContext(), Appconstant.UserID);
 
         Log.e("OTPVerifyActivity", "onCreate: " +getOTP);
 
@@ -98,10 +99,10 @@ String getEmail="",getOTP="",getMobile="",pin;
        CustomDialog dialog = new CustomDialog();
         dialog.showDialog(R.layout.progress_layout, this);
         AndroidNetworking.post(Api.BASE_URL+Api.verify_otp)
-                .addBodyParameter("email",getEmail)
                 .addBodyParameter("mobile",getMobile)
                 .addBodyParameter("type", "0")/* type=0 Driver type= 1 user*/
                 .addBodyParameter("otp",pin)
+                .addBodyParameter("id",getId)
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {

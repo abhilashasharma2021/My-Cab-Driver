@@ -147,7 +147,7 @@ public class NavigationActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onClick(View v) {
                SharedHelper.putKey(getApplicationContext(), Appconstant.UserID, "");
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
                 finish();
             }
         });

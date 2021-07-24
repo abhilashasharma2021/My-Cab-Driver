@@ -22,6 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mycab.Driver.Activity.Fragment.Activity.SignUpActivity;
+import com.mycab.utils.Appconstant;
+import com.mycab.utils.SharedHelper;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout dotsLayout;
@@ -36,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        SharedHelper.putKey(getApplicationContext(), Appconstant.PagerStatus, "1");
+
         viewPager = findViewById(R.id.view_pager);
         dotsLayout =  findViewById(R.id.layoutDots);
         btnStart =  findViewById(R.id.btnStart);

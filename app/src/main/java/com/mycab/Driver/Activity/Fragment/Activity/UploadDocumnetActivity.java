@@ -57,12 +57,12 @@ public class UploadDocumnetActivity extends AppCompatActivity {
 
     public static final int CODE_FRONT_GOVT_IMG = 3;
     public static final String CROP_IMAGE = "Cropped_Image";
-  public static ImageView imgFront,imgBack;
-     int getImgCode  =0;
+    public static ImageView imgFront, imgBack;
+    int getImgCode = 0;
     private File front_gallery_file;
     private File back_gallery_file;
-    private  File fileGovtFront,fileGovtBack,fileDrivingBack,fileDrivingFront,fileCommericalFront,fileCommericalBack,fileRCFront,fileRCBack;
-    String fronIvGovt = "", backIvGovt = "", backIvDriving = "", frontIvDriving = "", backIvCommerical = "", frontIvCommerical = "",frontIvRc="",backIvRc="";
+    private File fileGovtFront, fileGovtBack, fileDrivingBack, fileDrivingFront, fileCommericalFront, fileCommericalBack, fileRCFront, fileRCBack;
+    String fronIvGovt = "", backIvGovt = "", backIvDriving = "", frontIvDriving = "", backIvCommerical = "", frontIvCommerical = "", frontIvRc = "", backIvRc = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,12 +92,11 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                 //startActivity(new Intent(UploadDocumnetActivity.this,AddBankDetailActivity.class));
                 stName = binding.edtUserName.getText().toString().trim();
                 stTax = binding.etTax.getText().toString().trim();
-                if (stName.equals("")){
+                if (stName.equals("")) {
                     Toast.makeText(UploadDocumnetActivity.this, "Enter your name", Toast.LENGTH_SHORT).show();
-                }else if (stTax.equals("")){
+                } else if (stTax.equals("")) {
                     Toast.makeText(UploadDocumnetActivity.this, "Enter your Valid Tax number", Toast.LENGTH_SHORT).show();
-                }
-                else if (fronIvGovt.equals("")){
+                } else if (fronIvGovt.equals("")) {
                     Toast.makeText(UploadDocumnetActivity.this, "Please Choose the GovtId Front Image ", Toast.LENGTH_SHORT).show();
                 }
                /* else if (backIvGovt.equals("")){
@@ -237,7 +236,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
 
         ///////////////////////////////////////////////CROP IMAGE////////////////////////////////////////////////////////////////////
 
-        if (getImgCode ==1){
+        if (getImgCode == 1) {
 
             if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
@@ -250,19 +249,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUri);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
-                fileGovtFront= new File(imageUriResultCrop.getEncodedPath());
+                fileGovtFront = new File(imageUriResultCrop.getEncodedPath());
                 fronIvGovt = fileGovtFront.toString();
                 Log.e("imageUri", fronIvGovt);
                 imgFront.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }else if (getImgCode==2){
+        } else if (getImgCode == 2) {
 
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -273,20 +271,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
                 fileGovtBack = new File(imageUriResultCrop.getEncodedPath());
                 backIvGovt = fileGovtBack.toString();
                 Log.e("imageUri", backIvGovt);
                 imgBack.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }
-        else if (getImgCode==3){
+        } else if (getImgCode == 3) {
 
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -297,20 +293,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
                 fileDrivingFront = new File(imageUriResultCrop.getEncodedPath());
                 frontIvDriving = fileDrivingFront.toString();
                 Log.e("imageUri", frontIvDriving);
                 imgFront.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }
-        else if (getImgCode==4){
+        } else if (getImgCode == 4) {
 
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -321,21 +315,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
-                fileDrivingBack= new File(imageUriResultCrop.getEncodedPath());
+                fileDrivingBack = new File(imageUriResultCrop.getEncodedPath());
                 backIvDriving = fileDrivingBack.toString();
                 Log.e("imageUri", backIvDriving);
                 imgBack.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }
+        } else if (getImgCode == 5) {
 
-        else if (getImgCode==5){
-
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -346,21 +337,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
                 fileCommericalFront = new File(imageUriResultCrop.getEncodedPath());
-              frontIvCommerical = fileCommericalFront.toString();
+                frontIvCommerical = fileCommericalFront.toString();
                 Log.e("imageUri", frontIvCommerical);
                 imgFront.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }
+        } else if (getImgCode == 6) {
 
-        else if (getImgCode==6){
-
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -371,20 +359,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
                 fileCommericalBack = new File(imageUriResultCrop.getEncodedPath());
-              backIvCommerical= fileCommericalBack.toString();
+                backIvCommerical = fileCommericalBack.toString();
                 Log.e("imageUri", backIvCommerical);
                 imgBack.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }
-        else if (getImgCode==7){
+        } else if (getImgCode == 7) {
 
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -395,20 +381,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
                 fileRCFront = new File(imageUriResultCrop.getEncodedPath());
                 frontIvRc = fileRCFront.toString();
                 Log.e("imageUri", frontIvRc);
                 imgFront.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
-        }
-        else if (getImgCode==8){
+        } else if (getImgCode == 8) {
 
-            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode ==RESULT_OK) {
+            if (requestCode == CODE_FRONT_GOVT_IMG && resultCode == RESULT_OK) {
 
                 Uri imageUriBack = data.getData();
 
@@ -419,21 +403,18 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                     startCrop(imageUriBack);
                 }
 
-            }
-            else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
+            } else if (requestCode == UCrop.REQUEST_CROP && resultCode == RESULT_OK) {
 
                 Uri imageUriResultCrop = UCrop.getOutput(data);
                 fileRCBack = new File(imageUriResultCrop.getEncodedPath());
-               backIvRc = fileRCBack.toString();
+                backIvRc = fileRCBack.toString();
                 Log.e("imageUri", backIvRc);
                 imgBack.setImageURI(imageUriResultCrop);
-                Log.e("SDfsdfsdf","OK");
+                Log.e("SDfsdfsdf", "OK");
             }
         }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 
     }
@@ -475,8 +456,8 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-       imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-       imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+        imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+        imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
 
         imgFront.setOnClickListener(new View.OnClickListener() {
@@ -498,7 +479,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                         .setType("image/*"), CODE_FRONT_GOVT_IMG);
             }
         });
-      /*  imgFront.setOnClickListener(new View.OnClickListener() {
+      /* imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RxMediaPicker.builder(UploadDocumnetActivity.this)
@@ -518,9 +499,9 @@ public class UploadDocumnetActivity extends AppCompatActivity {
 
             }
         });
+*/
 
-
-        imgBack.setOnClickListener(new View.OnClickListener() {
+       /* imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -556,8 +537,8 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-         imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-         imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+        imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+        imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
         imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -625,8 +606,8 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-       imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-      imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+        imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+        imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
         imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -696,8 +677,8 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setCancelable(true);
         dialog.setContentView(R.layout.upload_image_layout);
-         imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
-         imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
+        imgFront = (ImageView) dialog.findViewById(R.id.imgFront);
+        imgBack = (ImageView) dialog.findViewById(R.id.imgBack);
         Button btDone = (Button) dialog.findViewById(R.id.btDone);
         imgFront.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -758,17 +739,17 @@ public class UploadDocumnetActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    private void upload_Document(){
+    private void upload_Document() {
 
-        Log.e("fghfghjfgjgh", "f: " +f.getAbsolutePath());
-        Log.e("fghfghjfgjgh", "fileGovtFront: " +fileGovtFront);
-        Log.e("fghfghjfgjgh", "fileGovtBack: " +fileGovtBack);
-        Log.e("fghfghjfgjgh", "fileDrivingFront: " +fileDrivingFront);
-        Log.e("fghfghjfgjgh", "fileDrivingBack: " +fileDrivingBack);
-        Log.e("fghfghjfgjgh", "fileCommericalFront: " +fileCommericalFront);
-        Log.e("fghfghjfgjgh", "fileCommericalBack: " +fileCommericalBack);
-        Log.e("fghfghjfgjgh", "fileRCFront: " +fileRCFront);
-        Log.e("fghfghjfgjgh", "fileRCBack: " +fileRCBack);
+        Log.e("fghfghjfgjgh", "f: " + f.getAbsolutePath());
+        Log.e("fghfghjfgjgh", "fileGovtFront: " + fileGovtFront);
+        Log.e("fghfghjfgjgh", "fileGovtBack: " + fileGovtBack);
+        Log.e("fghfghjfgjgh", "fileDrivingFront: " + fileDrivingFront);
+        Log.e("fghfghjfgjgh", "fileDrivingBack: " + fileDrivingBack);
+        Log.e("fghfghjfgjgh", "fileCommericalFront: " + fileCommericalFront);
+        Log.e("fghfghjfgjgh", "fileCommericalBack: " + fileCommericalBack);
+        Log.e("fghfghjfgjgh", "fileRCFront: " + fileRCFront);
+        Log.e("fghfghjfgjgh", "fileRCBack: " + fileRCBack);
 
         String UserID = SharedHelper.getKey(getApplicationContext(), Appconstant.UserID);
         CustomDialog dialog = new CustomDialog();
@@ -779,14 +760,14 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                 .addMultipartParameter("name", stName)
                 .addMultipartParameter("tax_number", stTax)
                 .addMultipartFile("government_id", fileGovtFront)
-                .addMultipartFile("government_id_back",fileGovtBack )
+                .addMultipartFile("government_id_back", fileGovtBack)
                 .addMultipartFile("driving_license", fileDrivingFront)
                 .addMultipartFile("driving_license_back", fileDrivingBack)
                 .addMultipartFile("commerciel_insurance", fileCommericalFront)
                 .addMultipartFile("commerciel_insurance_back", fileCommericalBack)
                 .addMultipartFile("RC", fileRCFront)
-                .addMultipartFile("RC_back",fileRCBack)
-                .addMultipartFile("image",f)
+                .addMultipartFile("RC_back", fileRCBack)
+                .addMultipartFile("image", f)
                 .setTag("text")
                 .setPriority(Priority.MEDIUM)
                 .build()
@@ -801,7 +782,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
                             if (strResult.equals("successfully")) {
 
 
-                                startActivity(new Intent(UploadDocumnetActivity.this,AddBankDetailActivity.class));
+                                startActivity(new Intent(UploadDocumnetActivity.this, AddBankDetailActivity.class));
                                 finish();
                             } else {
 
@@ -830,6 +811,7 @@ public class UploadDocumnetActivity extends AppCompatActivity {
 
 
     }
+
     private void startCrop(@NonNull Uri uri) {
 
         String destinationFileName = CROP_IMAGE;

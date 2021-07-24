@@ -2,6 +2,7 @@ package com.mycab.Driver.Activity.Fragment.FCM;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -11,8 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.mycab.Driver.Activity.Fragment.Activity.NavigationActivity;
+import com.mycab.MainActivity;
 import com.mycab.R;
 import com.mycab.utils.Appconstant;
 import com.mycab.utils.SharedHelper;
@@ -28,7 +32,7 @@ public class FirebaseMessageRecieverService extends FirebaseMessagingService {
 
     String body = "";
 
-
+    PendingIntent pendingIntent;
     @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
@@ -75,20 +79,29 @@ public class FirebaseMessageRecieverService extends FirebaseMessagingService {
                 myIntent.putExtra("id", id);
                 this.sendBroadcast(myIntent);
 
+
+                Intent resultIntent = new Intent(this, NavigationActivity.class);
+                resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                pendingIntent=PendingIntent.getActivity(getApplicationContext(),0,resultIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+                startActivity(resultIntent);
+
                 Notification notification = new NotificationCompat.Builder(this, App.FCM_CHANNEL_ID)
-                        .setSmallIcon(R.drawable.logo)
+                        .setSmallIcon(R.drawable.cancle)
                         .setContentTitle(title)
                         .setContentText(message)
                         .setPriority(PRIORITY_HIGH)
                         .setColor(Color.BLACK)
                         .setSound(null)
+                        .setContentIntent(pendingIntent)
                         .setDefaults(Notification.DEFAULT_ALL)
                         .build();
+
 
                 NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                 manager.notify(1002, notification);
 
 
+                SharedHelper.putKey(getApplicationContext(), Appconstant.REQUESTID,id);
 
 
 

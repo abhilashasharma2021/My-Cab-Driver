@@ -121,9 +121,15 @@
             android:value="AIzaSyBVXWPGpxUIMfAn4T-rzWkWNaDzeEWKmTo" />
         -->
         <!-- Jitu sir provide me -->
-        <meta-data
+      <!--  <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCJuMnRukkohrMxeK_zcN8pbdzUuCHa-PE" />
+-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBFFLqZEid0_-oX0UVIggT_CVbmZaz7Hpg" />
+
+
   <service
             android:name=".Driver.Activity.Fragment.FCM.FirebaseMessageRecieverService"
             android:exported="false">

@@ -13,6 +13,8 @@ public  class Appconstant {
     public static final String User_DropLat = "User_DropLat";
     public static final String User_DropLong = "User_DropLong";
     public static final String booking_id = "booking_id";
+    public static final String REQUESTID = "REQUESTID";
+    public static final String PagerStatus = "PagerStatus";
 
 
 }

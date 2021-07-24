@@ -21,12 +21,13 @@ import com.mycab.utils.SharedHelper;
 import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
-String userId="";
+String userId="",PagerStatus="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         userId = SharedHelper.getKey(getApplicationContext(), Appconstant.UserID);
+        PagerStatus = SharedHelper.getKey(getApplicationContext(), Appconstant.PagerStatus);
         Dexter.withActivity(this)
                 .withPermissions(
                         Manifest.permission.CAMERA,
@@ -45,14 +46,20 @@ String userId="";
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        if (PagerStatus.equals("1")) {
 
-                        if (userId.equals("")) {
+                            if (userId.equals("")) {
 
+                                startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+                                finish();
+                            } else {
+                                startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
+                                finish();
+                            }
+
+                        }
+                        else {
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            finish();
-
-                        } else {
-                            startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
                             finish();
 
                         }

@@ -67,7 +67,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@null"
-                android:text="Name"
+                android:hint="Name"
                 android:maxLength="50"
                 android:singleLine="true"
                 android:fontFamily="@font/robotoslabregular"

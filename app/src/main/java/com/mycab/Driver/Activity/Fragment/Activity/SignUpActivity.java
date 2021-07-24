@@ -254,12 +254,12 @@ String stMobile="",stEmail="";
          CustomDialog dialog = new CustomDialog();
         dialog.showDialog(R.layout.progress_layout, this);
 
-
         Log.e("SignUpActivity", "stEmail: " +stEmail);
         Log.e("SignUpActivity", "stMobile: " +stMobile);
         AndroidNetworking.post(Api.BASE_URL+Api.genrate_otp)
-                .addBodyParameter("email", stEmail)
-                .addBodyParameter("mobile", stMobile)
+                .addBodyParameter("email",stEmail)
+                .addBodyParameter("mobile",stMobile)
+                .addBodyParameter("type","0")/* type=0 Driver type= 1 user*/
                 .setPriority(Priority.HIGH)
                 .build()
                 .getAsJSONObject(new JSONObjectRequestListener() {
@@ -323,7 +323,7 @@ String stMobile="",stEmail="";
         Log.e("fdhfgh", "stMobile: " +stMobile);
         AndroidNetworking.post(Api.BASE_URL+Api.login)
                 .addBodyParameter("mobile", stMobile)
-
+                .addBodyParameter("type","0")/* type=0 Driver type= 1 user*/
                 .addBodyParameter("regid", regID)
                 .setPriority(Priority.HIGH)
                 .build()
@@ -345,6 +345,7 @@ String stMobile="",stEmail="";
                                 SharedHelper.putKey(getApplicationContext(), Appconstant.UserEmail, response.getString("email"));
                                 SharedHelper.putKey(getApplicationContext(), Appconstant.UserMobile, response.getString("phone_number"));
                                 SharedHelper.putKey(getApplicationContext(), Appconstant.GetOtp,response.getString("otp"));
+                                SharedHelper.putKey(getApplicationContext(), Appconstant.UserID,response.getString("id"));
 
                                 Toast toast = Toast.makeText(SignUpActivity.this, response.getString("result"), Toast.LENGTH_LONG);
                                 toast.setGravity(Gravity.CENTER, 0, 0);

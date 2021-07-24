@@ -82,34 +82,23 @@ ImageView menu,prf;
     private static final String KEY_LOCATION = "location";
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     boolean isLocationPermission = false;
-   String OnlineStatus="";
+   String OnlineStatus="",REQUESTID="";
     CameraPosition cameraPosition;
     Location lastLocation;
     //////////////////////////////////////////////
 
-   String driverStatus="";
+
+
+    BroadcastReceiver  mRegistrationBroadcastReceiver;
+
+
+
+
+
+
+    String driverStatus="";
    /*0=user_book,1=driver_confirm 2=driver_cancle 3=user_cancle 4=userc_confirm , 6=complete ride 5= start ride*/
 
-BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Log.e("chchchchchchch", "onReceive: " );
-
-
-        String result = intent.getStringExtra("title");
-        String requestId = intent.getStringExtra("id");
-
-
-        Log.e("tgyhtghyyt", result);
-        Log.e("tgyhtghyyt", requestId);
-
-        if (result.equals("New Delivery Request Found")) {
-          showrequest(requestId);
-        }
-
-
-    }
-};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -124,8 +113,10 @@ BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
         getUserId = SharedHelper.getKey(getActivity(), Appconstant.UserID);
 
         OnlineStatus = SharedHelper.getKey(getActivity(), Appconstant.OnlineStatus);
+        REQUESTID = SharedHelper.getKey(getActivity(), Appconstant.REQUESTID);
 
-        Log.e("HomeMapFragment", "OnlineStatus: " +OnlineStatus);
+        Log.e("fdbrf", "OnlineStatus: " +OnlineStatus);
+        Log.e("fhtht", "OnlineStatus: " +REQUESTID);
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
@@ -208,8 +199,39 @@ BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
         Log.e("sdfdsv", lng + "");
 
 
+    mRegistrationBroadcastReceiver =new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.e("chchchchchchch", "onReceive: " );
+
+
+                String result = intent.getStringExtra("title");
+                String requestId = intent.getStringExtra("id");
+
+
+                Log.e("tgyhtghyyt", result);
+                Log.e("tgyhtghyyt", requestId);
+
+                if (result.equals("New Delivery Request Found")) {
+                    showrequest(requestId);
+                }
+
+
+            }
+        };
+
+
+
+        if (!REQUESTID.equals("")){
+             showrequest(REQUESTID);
+         }
+
+
+
+
         return view;
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -250,6 +272,7 @@ BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
     }
 
     private void showrequest(String id){
+        Toast.makeText(getActivity(), "checkDialog", Toast.LENGTH_SHORT).show();
         AndroidNetworking.post(Api.BASE_URL+Api.show_user_to_dirver)
                 .addBodyParameter("id",id)
                  .setTag("Show Notification")
@@ -258,7 +281,7 @@ BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
                 .getAsJSONObject(new JSONObjectRequestListener() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        Log.e("HomeMapFragment", "onResponse: " +response);
+                        Log.e("djfdjkgvjkf", "onResponse: " +response);
 
                         try {
                             if (response.getString("result").equals("Successfully")){
@@ -283,9 +306,9 @@ BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
 
 
 
-                                    Log.e("HomeMapFragment", "onResponse: " +response.getString("pickup_location"));
-                                    Log.e("HomeMapFragment", "onResponse: " +response.getString("drop_location"));
-                                    Log.e("HomeMapFragment", "onResponse: " +jsonObject.getString("name"));
+                                    Log.e("djfdjkgvjkf", "onResponse: " +response.getString("pickup_location"));
+                                    Log.e("djfdjkgvjkf", "onResponse: " +response.getString("drop_location"));
+                                    Log.e("djfdjkgvjkf", "onResponse: " +jsonObject.getString("name"));
 
                                     txPickAddress.setText(response.getString("pickup_location"));
                                     txDropAddress.setText(response.getString("drop_location"));
@@ -605,6 +628,8 @@ BroadcastReceiver mRegistrationBroadcastReceiver =new BroadcastReceiver() {
                                 SharedHelper.putKey(getActivity(), Appconstant.User_DropLong, drop_long);
                                 SharedHelper.putKey(getActivity(), Appconstant.booking_id, booking_id);
 
+                                SharedHelper.putKey(getActivity(), Appconstant.REQUESTID,"");
+                                Toast.makeText(getActivity(), "Successfull Accept", Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             Log.e("dfdsfd", "onResponse: " +e);
