@@ -90,12 +90,6 @@ ImageView menu,prf;
 
 
     BroadcastReceiver  mRegistrationBroadcastReceiver;
-
-
-
-
-
-
     String driverStatus="";
    /*0=user_book,1=driver_confirm 2=driver_cancle 3=user_cancle 4=userc_confirm , 6=complete ride 5= start ride*/
 

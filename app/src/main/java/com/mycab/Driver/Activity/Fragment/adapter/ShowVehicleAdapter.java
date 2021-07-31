@@ -2,6 +2,7 @@ package com.mycab.Driver.Activity.Fragment.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.anilokcun.uwmediapicker.UwMediaPicker;
 import com.mycab.Driver.Activity.Fragment.Activity.AddBankDetailActivity;
 import com.mycab.Driver.Activity.Fragment.model.ShowVehicleModel;
 import com.mycab.databinding.RowShowVehicleLayoutBinding;
@@ -43,8 +45,7 @@ public class ShowVehicleAdapter extends RecyclerView.Adapter<ShowVehicleAdapter.
         ShowVehicleModel modelObject = vehicleList.get(position);
         holder.rowShowVehicleLayoutBinding.txVehicleName.setText(modelObject.getVehicleName());
 
-
-       /* notifyItemChanged(position);
+        /* notifyItemChanged(position);
         modelObject.setVehicleId("swift");
         notifyItemRemoved(position);*/
         holder.rowShowVehicleLayoutBinding.checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

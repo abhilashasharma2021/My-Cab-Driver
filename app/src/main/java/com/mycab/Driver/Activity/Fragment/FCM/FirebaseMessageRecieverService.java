@@ -38,9 +38,6 @@ public class FirebaseMessageRecieverService extends FirebaseMessagingService {
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         Log.e("check", "onMessageRecieved Called");
-
-
-
         if (remoteMessage.getData().size() > 0) {
             Log.e("check", "Data received");
             Log.e("check", remoteMessage.getData().toString());
@@ -63,7 +60,6 @@ public class FirebaseMessageRecieverService extends FirebaseMessagingService {
                 JSONObject jsonObject1=new JSONObject(payload);
                 JSONArray jsonArray=new JSONArray(jsonObject1.getString("driver_ride"));
                 for (int i = 0; i <jsonArray.length() ; i++) {
-
                     JSONObject jsonObject2=jsonArray.getJSONObject(i);
                      id=jsonObject2.getString("id");
                 }
